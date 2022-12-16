@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <ListForOptions>
-      {options.map(option => {
+      {options.map((option, index) => {
         return (
-          <li key={option}>
+          <li key={index}>
             <OptionsButton
               type="button"
               onClick={() => onLeaveFeedback(option)}
