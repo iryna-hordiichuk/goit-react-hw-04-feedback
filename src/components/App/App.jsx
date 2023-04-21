@@ -6,6 +6,7 @@ import { Statistics } from 'components/Statistics';
 import { Notification } from 'components/Notification';
 
 export class App extends Component {
+  
   state = {
     good: 0,
     neutral: 0,
