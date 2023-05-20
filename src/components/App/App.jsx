@@ -13,6 +13,7 @@ const [neutral, setNeutral] = useState(0);
 const [bad, setBad] = useState(0);
 
 const optionsArray = ['good', 'neutral', 'bad'];
+const countTotalFeedBack = good + neutral + bad;
 
 const onLeaveFeedback = option => {
   switch (option) {
@@ -34,12 +35,10 @@ const onLeaveFeedback = option => {
   }
 };
 
-const countTotalFeedback = () => {
-  return good + neutral + bad;
-};
+
 
 const countPositiveFeedbackPercentage = () => {
-  return Math.round(good / countTotalFeedback() * 100) || 0;
+  return Math.round(good / countTotalFeedBack * 100) || 0;
 };
 
 
@@ -62,12 +61,12 @@ return (
           </Section>
 
           <Section title={'Statistics'}>
-            {countTotalFeedback() ? (
+            {countTotalFeedBack ? (
               <Statistics
                 good={good}
                 neutral={neutral}
                 bad={bad}
-                total={countTotalFeedback()}
+                total={countTotalFeedBack}
                 positivePercentage={countPositiveFeedbackPercentage()}
               />
             ) : (
